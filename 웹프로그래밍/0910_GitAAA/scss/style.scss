@@ -1,9 +1,17 @@
 @import "reset";
 
-div{
+.box1{
     background-color: violet;
 
     h1{
         font-size: 2rem;
+    }
+}
+
+.box2{
+    background-color: green;
+
+    h2{
+        font-size: 1rem;
     }
 }
