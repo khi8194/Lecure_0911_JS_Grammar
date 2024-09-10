@@ -1,0 +1,10 @@
+$tablet: 1199px;
+$mobile: 679px;
+
+//common style
+@import "common/reset";
+@import "common/header";
+@import "common/footer";
+
+//page style
+@import "pages/main";
