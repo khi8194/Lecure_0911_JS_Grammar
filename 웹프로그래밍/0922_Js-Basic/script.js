@@ -13,9 +13,15 @@ const list = document.querySelectorAll('ul li');
 // console.log(list[1]);
 
 //배열형태로 반환된 복수개의 html요소 하나씩 선택
-for(let i=0; i<4; i++) {
-    console.log(list[i]);
-}
+// for(let i=0; i<4; i++) {
+//     console.log(list[i]);
+// }
+
+
+//화살표함수 표현식과 forEach 내장함수를 이용한 DOM반복 선택방법
+//배열.forEach((반복요소,순번)=>{반복코드})
+list.forEach((el) => console.log(el));
+
 
 //자바스크립트에서 함수 만드는 법
 //1. 함수선언식
@@ -34,5 +40,7 @@ console.log(minus(3,1));
 
 //3. 화살표 함수로 축약된 함수 표현식
 // 화살표 함수에서는 function 키워드 생략, 중괄호 안쪽에 return 문만 있으면 중괄호와 return문도 생략 가능
+//화살표 함수는 단지 기존 코드의 축약 말고도
+//함수 내부의 this 객체 생성을 막아서 고정해주는 효과 (객체지향 프로그램시 필요)
 const multiply = (num1, num2) => num1*num2;
 console.log(multiply(3,3));
