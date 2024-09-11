@@ -95,25 +95,52 @@
 
 
 
-const h1 = document.querySelector("h1");
-const h2 = document.querySelector("h2");
-const list = document.querySelectorAll('ul li');
+// const h1 = document.querySelector("h1");
+// const h2 = document.querySelector("h2");
 
-// DOM의 스타일을 다룰때 중요한 점
-h1.style.color = 'blue';
+// // DOM의 스타일을 다룰때 중요한 점
+// h1.style.color = 'blue';
 
-// css로 적용된 스타일값을 자바스크롭 가져오는법
-//html을 브라우저가 생성하는 DOM만 제어가능할뿐, cssDOM접근, 제어가 불가능
-//그래서 이미 화면상에 스타일이 적용되어 있다 하더라도 DOM자체적으로 스타일 값이 없음
-console.dir(h2.style);
-console.log(h2.style.color);  // 단독 실행 안됨
+// // css로 적용된 스타일값을 자바스크롭 가져오는법
+// //html을 브라우저가 생성하는 DOM만 제어가능할뿐, cssDOM접근, 제어가 불가능
+// //그래서 이미 화면상에 스타일이 적용되어 있다 하더라도 DOM자체적으로 스타일 값이 없음
+// console.dir(h2.style);
+// console.log(h2.style.color);  // 단독 실행 안됨
 
-//결국 자바스크립트는 cssDOM에 의해서 생성된 스타일객체에 접근할 수 없기 떄문에 객체정보를 가져오는 게 아니라
-//화면에 랜더링 된 스타일 값을 가져오기 위해서는
-//화면에 이미 출력된 값을 역으로 연산해서 가져옴 
-//아래처럼 이미 출력된 값을 재연산해서 가져오기 때문에 반환값이 color:violet 이 아닌 실제적 수치값인 rgb값을 가져옴
+// //결국 자바스크립트는 cssDOM에 의해서 생성된 스타일객체에 접근할 수 없기 떄문에 객체정보를 가져오는 게 아니라
+// //화면에 랜더링 된 스타일 값을 가져오기 위해서는
+// //화면에 이미 출력된 값을 역으로 연산해서 가져옴 
+// //아래처럼 이미 출력된 값을 재연산해서 가져오기 때문에 반환값이 color:violet 이 아닌 실제적 수치값인 rgb값을 가져옴
 
-console.log(getComputedStyle (h2).color);
-// rgb(238, 130, 238)
-console.log(getComputedStyle (h1).fontSize);
-//160px
+// console.log(getComputedStyle (h2).color);
+// // rgb(238, 130, 238)
+// console.log(getComputedStyle (h1).fontSize);
+// //160px
+
+
+
+
+// ========================
+// ========================
+
+
+
+
+const a = document.querySelector("a");
+console.dir(a);
+
+//a.href = "https://www.naver.com";
+//console.log(a.href);
+
+//문서객체의 속성값 변경, 속성환 반환을 위한 전용 내장 함수
+//setAttribute, getAttribute라는 내장함수를 이용하면
+//data-접두사가 붙은 커스터 속성도 편하게 수정,호출 가능
+a.setAttribute("href", "https://www.naver.com");
+
+//문서객체의 특정 속성값 가져오기
+console.log(a.getAttribute("href"));
+
+// a.data-index = '3';
+a.setAttribute("data-index", 3);
+console.log(a.getAttribute("data-index"));
+console.dir(a);
