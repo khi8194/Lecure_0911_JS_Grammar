@@ -7,53 +7,33 @@
     </head>
     <body>
         <script>
-            //연산자 : 특정 값을 나타내기 위한 연산처리를 구문
-            //산술 연산자 : 수식에 대한 연산자
-            //비교 연산자 : true,false 같은 boolean을 나타내는 비교하기 위한 연산자
-            //대입 연산자 : 우항을 먼저 연산해서 좌항에 대입해주는 연산자
+            //const : 재할당이 불가능한 변수 (메모리에 할당된 값 변경 불가)
+            //let : 재할당 가능 (기존 메모리에 할당된 값 변경 가능)
 
-            //산술 연산자
-            console.log(2 + 3);
-            console.log(2 - 3);
-            console.log(2 * 3);
-            console.log(4 / 2);     // 나눈 값의 몫을 출력
-            console.log(5 % 2);   // 나눈 값의 나머지를 출력
+            const DB = "엄청 중요한 DB 문자정보";  //원시형 자료 (는 변경이 안됨)
+            // DB = "쓸데 없는 정보";
+            // console.log(DB);
 
-            //%연산자가 주로 쓰이는 경우 : 전체 게시글 대비 페이지 개수  계산할 때
-            //전체 게시글 : 42, 페이지당 10개의 게시글 출력
-            console.log( 2 ** 3); // 2의 3제곱승 2*2*2 = 8
+            const student1 = {
+                name : "Emily",     //property (key : value)
+                age : 30,
+                isFemale : true,
+            };
+            student1.name= "Emma";
+            console.log(student1);
 
+            //참조형 자료는 값 자체가 callstack에 있는 메모리 공간에 값이 할당되어 있는 것이 아닌 memoryHeap에 저장되어있는 위치참조값이 할당됨
+            //결과적으로 const방식으로 참조형 데이터를 할당했더라도 값을 변경하면 callstack에 할당되어있는 참조값을 변경하는 것이 아닌
+            //참조값이 가리키고 있는 메모리힙상의 값을 변경
+            //변수값이 할당되어 있는 callstack 입장에서는 값 변경을 인지하지 않아서 const 방식이라고 하더라도 값 변경이 일어남
+            const colors = ["red", "green", "blue"];
+            colors[0] = 'hotpink';
+            console.log(colors);
 
-            //비교연산자
-            console.log(2 == "2"); // == 자료형은 무시하고 값만 비교 true
-            console.log(2 === "2"); // === 자료형과 값을 모두 비교 false
-            console.log(2 != "2"); // 앞에 !를 붙이면 값이 같지 않을때 참 (자료형은 무시하고 값만 비교)
-            console.log(2 !== "2"); // 위와 같은 로직이지만 값과 자료형 같이 비교
-            console.log(2 < 3);
-            console.log(2 <= 3);
-
-            console.log(true && true);  //true. 두개의 조건이 모두 참이어야지 참으로 인식
-            console.log(true && false); //false.
-            console.log(true || false); //true. 복수개의 조건중 하나만 참이어도 참으로 인식
-
-
-            //복합 대입 연산자
-            let num = 3;
-            // num = num + 2;
-            num += 2;   //자기 자신에 추가연산된 결과값으로 덮어쓰기
-            console.log(num);
-
-            let num1 = 0;
-            num1 += 1;
-            console.log(num1);
-
-            let num2 = 0;
-            num2 ++ ;   //후위 증감 연산자
-            console.log(num2);//초기값을 먼저 활용한 후 뒤에 값 증가
-
-            let num3 = 0;
-            ++ num3;    //전위 증감 연산자
-            console.log(num3);//초기값에서 값을 먼저 증가시킨 뒤 증가된 값을 사용
+            //아래와 같이 colors에 등록되어 있는 참조형 자료의 값을 변경하는 것이 아닌
+            //아예  새로운 값을 대입하려고 하면 에러 발생
+            //메모리힙에 새로운 배열데이터가 저장되면서 새로운 위치값은 새로운 참조값이 생김
+            //callstack상에 대입된 참조값 자체가 물리적으로 변경되므로 재할당 불가능하다는 에러구문이 뜸
         </script>
     </body>
 </html>
