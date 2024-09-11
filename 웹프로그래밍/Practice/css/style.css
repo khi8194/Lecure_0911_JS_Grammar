@@ -58,6 +58,32 @@ header nav .util {
   color: #888;
 }
 
+footer {
+  width: 100%;
+  padding: 30px 10%;
+  background-color: #222;
+}
+footer section {
+  padding: 20px 0px;
+  color: #555;
+}
+footer section:nth-of-type(1) {
+  border-bottom: 1px solid #555;
+  display: flex;
+  justify-content: space-between;
+}
+footer section:nth-of-type(1) h1 {
+  font-size: 2rem;
+}
+footer section:nth-of-type(1) ul {
+  display: flex;
+  gap: 20px;
+}
+footer section:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+}
+
 figure {
   width: 100%;
   height: 800px;
@@ -144,32 +170,6 @@ figure article a {
   font: 1.5rem/1.4 "arial";
   color: #fff;
   opacity: 0.5;
-}
-
-footer {
-  width: 100%;
-  padding: 30px 10%;
-  background-color: #222;
-}
-footer section {
-  padding: 20px 0px;
-  color: #555;
-}
-footer section:nth-of-type(1) {
-  border-bottom: 1px solid #555;
-  display: flex;
-  justify-content: space-between;
-}
-footer section:nth-of-type(1) h1 {
-  font-size: 2rem;
-}
-footer section:nth-of-type(1) ul {
-  display: flex;
-  gap: 20px;
-}
-footer section:nth-of-type(2) {
-  display: flex;
-  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */
