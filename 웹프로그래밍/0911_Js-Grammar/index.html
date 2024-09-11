@@ -8,51 +8,54 @@
     <body>
         <script>
             /*
-            자바스크립트 : 1955 브랜드 아이크 (넷스케이프 근무 당시 개발한 스크립트 언어)
-            모카 : 자바 vs 자바스크립트
-            ECMAScript5 vs 6 (2015) 이때 자스의 문법이 많이 바뀌었기 때문에 이 시점 기준으로 ES5, ES6 모질라사의 firefox
+            자바스크립트의 자료형 (Data Type)
+            원시형 자료 (Primitive Type) 
+            특성1: 데이터의 크기가 상대적으로 명확한 자료형 메모리 선언시 값 자체가 담겨있는 자료형
+            특성2: 메모리에 값만 담겨있음
+            - 문자 (String) : "" 로 감싸야 함 (감싸지 않은 문자값은 자바스크립트가 변수로 인지)
+            - 숫자 (Number) : 숫자를 ""로 감싸면 숫자가 문자로 변경(형변환)
+            - 논리형 (Boolean) : true,false를 ""로 감싸면 문자로변경(형변환)
+            - undefined (Undefined)
 
-            자바스크립트 : 브라우저에 내장이되서 실시간으로 동작하는 스크립트 언어
-            JAVA, C언어같이 컴파일이 필요없는 인터프리터 언어
-
-            예전에 천대받던 자바스크립트가 요즘에 와서 인기많아진 이유
-            - 예전에 브라우저 성능이 좋지 않았을 떄에는 개발이 번거롭더라도 성능에 유리한 컴파일 언어가 인기가 많았음
-            - 이젠 브라우저 성능이 좋아서 컴파일 필요없이 개발이 편한 자바스크립트가 인기가 점점 올라감 (채산성)
-
-            DOM (Document Object Model) - html로 작성된 코드를 서버에서 가지고 온 다음 클라이언트 단에서 해석후 자바스크립트가 제어하기 편한 형태인 객체로 반환
-
-            web API (브라우저가 하는 업무)
-            - DOM생성
-            - HTTPrequest : 외부데이터 가겨오기
-            - timer
-
-            Javascript Engine (브라우저가 html 문서를 출력된 이후의 모든 동적인 변경사항 처리)
-            - Memory Heap  동적 메모리 할당 (데이터의 크기가 너무 크거나 가변적인 데이터는 힙메모리에 저장됨)
-            - Callstack : 정적 메모리 할당, 자바스크립트의 업무를 수행해하는 공간
-            - Single Thread (단일 쓰레드 방식) : 이전 업무가 끝나야지 다음 업무가 순차적으로 실행되는 방식
+            참조형 자료 (Refernce Type) 
+            특성1: 데이터의 크기가 불명확하거나 가변적이라서 메모리 선언시 값 자체가 담기는 것이 아닌 해당 값이 저장되어 있는 참조위치 (참고값)이 담기는 자료형
+            특성2: 참조위치만 담겨있는 것이 아닌 해당 자료형으로 활용할 수 있는 함수나 여러가지 값들이 같이 참조되어 있음
+            - 배열 (Array) : 같은 성격의 여러개의 값들을 그룹화 할때
+            - 객체 (Object) : 여러값들을 그룹화하되 값들의 특성이 상이해서 ket:value  형태로 각 값마다의 구분자를 같이 담아높은 형태
+            - null (Object)
+            - Func (Object)
             */
 
-            //변수 : 자주쓰는 값을 재활용하기위해 담아놓는 공간
-            //변수 : 자주쓰는 값을 매번 찾을 필요가 없기 때문의 성능의 이점, 여러군데 연동되는 값을 변수에 담아놓으면 한번에 값 변경 가능해서 효율성 증대
-            //변수 선언하는 두 가지 방법
-            // 변수 선언 : 메모리공간을 만드는 행위
-            let num = 2;    //num이라는 이름의 메모리 공간을 만듬 (변수 선언)
-            num = 3;        //이미 만들어진 num이라는 변수 공간에 값을 대입 (변수에 값 할당)
-            let txt = 'hello';  //변수 선언하자마자 바로 값 할당이 일어남 (변수 초기화)
-            //변수 선언 방식의 차이
-            //let 변수의 값을 덮어쓰기 (재할당 가능한) 변수 선언방식
-            //const 변수의 값을 덮어쓰기 할 수 없는 ( 재할당 불가능한 ) 변수 선언방식
-            let num2 = 2;
-            console.log(num2);
-            num2 = 5;   //이미 있는 num2라는 메모리 공간에 값을 5 바꿔치기 ( 재할당 )
-            console.log(num2);
+            const text = "hello";
+            console.log(text);
 
-            const num3 = 5;
-            num3 = 8;
-            console.log(num3);
-            //const방식은 변경되면 안되는 중요한 정보값을 담을때 주로 사용
-            //변경될 일이 없는 정보값을 담으면 let방식에 비해 메로리를 더 효율적으로 사용
-            //let 방식은 추후에 변경될지도 모르는 정보값은 let 방식 선언
+            const num =3;
+            console.log(num);
+
+            const isTrue = true;
+            console.log(isTrue);
+
+            let mistake; // 메모리 선언 후 값을 집어넣지 않으면 자동적으로 들어가는 자료형
+            console.log(mistake);
+
+            const colors = ["red" , "green", "blue"];
+            console.log(colors);    //(3) ['red', 'green', 'blue']
+            // console.log(colors[0]);
+            // console.dir(colors);  // Array(3) 출력
+
+            const myInfo = {
+                name : 'David',
+                age : 20,
+                isFemale : false
+            };
+
+            //자료형 확인하는 방법 typeof 자료 (자료형 표현식)
+            console.log(typeof text);
+            console.log(typeof isTrue);
+            console.log(typeof mistake);
+            console.log(typeof colors);
+            console.log(typeof myInfo);
+            console.log(typeof null);
         </script>
     </body>
 </html>
