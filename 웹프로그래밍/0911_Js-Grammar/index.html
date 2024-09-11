@@ -7,59 +7,19 @@
     </head>
     <body>
         <script>
-            /*
-            자바스크립트의 자료형 (Data Type)
-            원시형 자료 (Primitive Type) 
-            특성1: 데이터의 크기가 상대적으로 명확한 자료형 메모리 선언시 값 자체가 담겨있는 자료형
-            특성2: 메모리에 값만 담겨있음
-            - 문자 (String) : "" 로 감싸야 함 (감싸지 않은 문자값은 자바스크립트가 변수로 인지)
-            - 숫자 (Number) : 숫자를 ""로 감싸면 숫자가 문자로 변경(형변환)
-            - 논리형 (Boolean) : true,false를 ""로 감싸면 문자로변경(형변환)
-            - undefined (Undefined)
+            // 문자열, 숫자 다룰 때 주의점
+            const text = '2';
+            const num = 2;
+            const result = text + num;  //문자와 숫자는 산술적으로 연산할 수 없으니 num의 숫자값을 강제로 문자 형변환 처리
+            console.log(result);    //2로 변환된 2개의 문자값을 이어붙여서 '22'
 
-            참조형 자료 (Refernce Type) 
-            특성1: 데이터의 크기가 불명확하거나 가변적이라서 메모리 선언시 값 자체가 담기는 것이 아닌 해당 값이 저장되어 있는 참조위치 (참고값)이 담기는 자료형
-            특성2: 참조위치만 담겨있는 것이 아닌 해당 자료형으로 활용할 수 있는 함수나 여러가지 값들이 같이 참조되어 있음
-            - 배열 (Array) : 같은 성격의 여러개의 값들을 그룹화 할때
-            - 객체 (Object) : 여러값들을 그룹화하되 값들의 특성이 상이해서 ket:value  형태로 각 값마다의 구분자를 같이 담아높은 형태
-            - null (Object)
-            - Func (Object)
-            */
-
-            const text = "hello";
-            console.log(text);
-
-            const num =3;
-            console.log(num);
-
-            const isTrue = true;
-            console.log(isTrue);
-
-            let mistake; // 메모리 선언 후 값을 집어넣지 않으면 자동적으로 들어가는 자료형
-            console.log(mistake);
-
-            const colors = ["red" , "green", "blue"];
-            console.log(colors);    //(3) ['red', 'green', 'blue']
-            // console.log(colors[0]);
-            // console.dir(colors);  // Array(3) 출력
-
-            const myInfo = {
-                name : 'David',
-                age : 20,
-                isFemale : false
-            };
-
-            //자료형 확인하는 방법 typeof 자료 (자료형 표현식)
-            console.log(typeof text);
-            console.log(typeof isTrue);
-            console.log(typeof mistake);
-            console.log(typeof colors);
-            console.log(typeof myInfo);
-            console.log(typeof null);
-
-            //undefined vs null
-            //undefined는 에러상황 : 있어야 될 위치가 값이 없는 경우이기 때문에
-            //null : 일부러 값을 비워둘때, 추후 객체가 담길 메모리 공간에 지금 당장은 값을 담을 수 없을때 일부러 null로 초기화
+            // = 대입 연산자 기준으로는 오른쪽 식이 먼저 연산된 뒤, 결과값이 왼쪽에 대입
+            // 표현식 안쪽에서 왼쪽에서 오른쪽으로 연산처리됨
+            const num1 = 1;
+            const num2 = 2;
+            const num3 = '3';
+            console.log(num1 + num2 + num3);    // '33';
+            console.log(num3 + num2 + num1);    // '321;'
         </script>
     </body>
 </html>
