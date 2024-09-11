@@ -45,34 +45,75 @@
 // const multiply = (num1, num2) => num1*num2;
 // console.log(multiply(3,3));
 
+
+
+
+// ========================
+// ========================
+
+
+
+
+// const h1 = document.querySelector("h1");
+// const link = document.querySelector(".title a");
+// const list = document.querySelectorAll('ul li');
+
+// console.dir(h1);
+// console.dir(link);
+// console.dir(list[0]);
+
+// //DOM 스타일 제어
+// h1.style.backgroundColor = 'pink'; //h1 배경컬러 핑크 설정
+// h1.style.fontSize = '10rem'; //h1 폰트사이즈 설정
+
+
+// //DOM 속성 변경 (attribute 변경)
+// link.href = "https://www.naver.com";
+
+
+// //DOM의 텍스트 변경 (textnode)
+// list[0].innerText = "목록1";
+
+// //DOM의 html 구성 변경 (elementNode)
+// list[1].innerHTML = '<span>list2</span>';
+
+// //이벤트 : 사용자, 시스템이 웹상에서 발생시키는 모든 액션
+// // 사용자 이벤트 : click, mouseovr, mouseout, resize, scroll, mousewheel, mousemove 
+// // 시스템 이벤트 : load, error
+
+// //DOM의 이벤트설정
+// list[2].onclick = () => {
+//     console.log("You click list3");
+// };
+
+
+
+
+// ========================
+// ========================
+
+
+
+
 const h1 = document.querySelector("h1");
-const link = document.querySelector(".title a");
+const h2 = document.querySelector("h2");
 const list = document.querySelectorAll('ul li');
 
-console.dir(h1);
-console.dir(link);
-console.dir(list[0]);
+// DOM의 스타일을 다룰때 중요한 점
+h1.style.color = 'blue';
 
-//DOM 스타일 제어
-h1.style.backgroundColor = 'pink'; //h1 배경컬러 핑크 설정
-h1.style.fontSize = '10rem'; //h1 폰트사이즈 설정
+// css로 적용된 스타일값을 자바스크롭 가져오는법
+//html을 브라우저가 생성하는 DOM만 제어가능할뿐, cssDOM접근, 제어가 불가능
+//그래서 이미 화면상에 스타일이 적용되어 있다 하더라도 DOM자체적으로 스타일 값이 없음
+console.dir(h2.style);
+console.log(h2.style.color);  // 단독 실행 안됨
 
+//결국 자바스크립트는 cssDOM에 의해서 생성된 스타일객체에 접근할 수 없기 떄문에 객체정보를 가져오는 게 아니라
+//화면에 랜더링 된 스타일 값을 가져오기 위해서는
+//화면에 이미 출력된 값을 역으로 연산해서 가져옴 
+//아래처럼 이미 출력된 값을 재연산해서 가져오기 때문에 반환값이 color:violet 이 아닌 실제적 수치값인 rgb값을 가져옴
 
-//DOM 속성 변경 (attribute 변경)
-link.href = "https://www.naver.com";
-
-
-//DOM의 텍스트 변경 (textnode)
-list[0].innerText = "목록1";
-
-//DOM의 html 구성 변경 (elementNode)
-list[1].innerHTML = '<span>list2</span>';
-
-//이벤트 : 사용자, 시스템이 웹상에서 발생시키는 모든 액션
-// 사용자 이벤트 : click, mouseovr, mouseout, resize, scroll, mousewheel, mousemove 
-// 시스템 이벤트 : load, error
-
-//DOM의 이벤트설정
-list[2].onclick = () => {
-    console.log("You click list3");
-};
+console.log(getComputedStyle (h2).color);
+// rgb(238, 130, 238)
+console.log(getComputedStyle (h1).fontSize);
+//160px
