@@ -7,19 +7,53 @@
     </head>
     <body>
         <script>
-            // 문자열, 숫자 다룰 때 주의점
-            const text = '2';
-            const num = 2;
-            const result = text + num;  //문자와 숫자는 산술적으로 연산할 수 없으니 num의 숫자값을 강제로 문자 형변환 처리
-            console.log(result);    //2로 변환된 2개의 문자값을 이어붙여서 '22'
+            //연산자 : 특정 값을 나타내기 위한 연산처리를 구문
+            //산술 연산자 : 수식에 대한 연산자
+            //비교 연산자 : true,false 같은 boolean을 나타내는 비교하기 위한 연산자
+            //대입 연산자 : 우항을 먼저 연산해서 좌항에 대입해주는 연산자
 
-            // = 대입 연산자 기준으로는 오른쪽 식이 먼저 연산된 뒤, 결과값이 왼쪽에 대입
-            // 표현식 안쪽에서 왼쪽에서 오른쪽으로 연산처리됨
-            const num1 = 1;
-            const num2 = 2;
-            const num3 = '3';
-            console.log(num1 + num2 + num3);    // '33';
-            console.log(num3 + num2 + num1);    // '321;'
+            //산술 연산자
+            console.log(2 + 3);
+            console.log(2 - 3);
+            console.log(2 * 3);
+            console.log(4 / 2);     // 나눈 값의 몫을 출력
+            console.log(5 % 2);   // 나눈 값의 나머지를 출력
+
+            //%연산자가 주로 쓰이는 경우 : 전체 게시글 대비 페이지 개수  계산할 때
+            //전체 게시글 : 42, 페이지당 10개의 게시글 출력
+            console.log( 2 ** 3); // 2의 3제곱승 2*2*2 = 8
+
+
+            //비교연산자
+            console.log(2 == "2"); // == 자료형은 무시하고 값만 비교 true
+            console.log(2 === "2"); // === 자료형과 값을 모두 비교 false
+            console.log(2 != "2"); // 앞에 !를 붙이면 값이 같지 않을때 참 (자료형은 무시하고 값만 비교)
+            console.log(2 !== "2"); // 위와 같은 로직이지만 값과 자료형 같이 비교
+            console.log(2 < 3);
+            console.log(2 <= 3);
+
+            console.log(true && true);  //true. 두개의 조건이 모두 참이어야지 참으로 인식
+            console.log(true && false); //false.
+            console.log(true || false); //true. 복수개의 조건중 하나만 참이어도 참으로 인식
+
+
+            //복합 대입 연산자
+            let num = 3;
+            // num = num + 2;
+            num += 2;   //자기 자신에 추가연산된 결과값으로 덮어쓰기
+            console.log(num);
+
+            let num1 = 0;
+            num1 += 1;
+            console.log(num1);
+
+            let num2 = 0;
+            num2 ++ ;   //후위 증감 연산자
+            console.log(num2);//초기값을 먼저 활용한 후 뒤에 값 증가
+
+            let num3 = 0;
+            ++ num3;    //전위 증감 연산자
+            console.log(num3);//초기값에서 값을 먼저 증가시킨 뒤 증가된 값을 사용
         </script>
     </body>
 </html>
